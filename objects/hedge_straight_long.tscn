@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://vi3sm6to7hrn"]
+
+[ext_resource type="PackedScene" uid="uid://607rpkqxs6o" path="res://Assets/gltf/hedge_straight_long.gltf" id="1_tl4t4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aooyc"]
+size = Vector3(3.71234, 1.4776, 1)
+
+[node name="hedge_straight_long" instance=ExtResource("1_tl4t4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hedge_straight_long" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hedge_straight_long/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0411682, 0.711517, 0)
+shape = SubResource("BoxShape3D_aooyc")

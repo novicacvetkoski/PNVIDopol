@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvnqaqnyyw5t7"]
+
+[ext_resource type="PackedScene" uid="uid://dr4a5fmn5oe7e" path="res://gltf/coin_stack_medium.gltf" id="1_5xavq"]
+[ext_resource type="Script" path="res://objects/coin_stack_medium.gd" id="2_a8qp0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ypetb"]
+size = Vector3(1, 0.690308, 1)
+
+[node name="coin_stack_medium" instance=ExtResource("1_5xavq")]
+script = ExtResource("2_a8qp0")
+
+[node name="Area3D" type="Area3D" parent="coin_stack_medium" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coin_stack_medium/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.309998, 0)
+shape = SubResource("BoxShape3D_ypetb")
+
+[connection signal="body_entered" from="coin_stack_medium/Area3D" to="." method="_on_area_3d_body_entered"]

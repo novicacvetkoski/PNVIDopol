@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkqiaehyrgi3v"]
+
+[ext_resource type="PackedScene" uid="uid://cgbvt05x5qohr" path="res://Assets/gltf/hedge_corner.gltf" id="1_a3p05"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amisb"]
+size = Vector3(2.22205, 1.52881, 2.25696)
+
+[node name="hedge_corner" instance=ExtResource("1_a3p05")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="hedge_corner" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hedge_corner/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.815511, 0.738034, 0.786019)
+shape = SubResource("BoxShape3D_amisb")

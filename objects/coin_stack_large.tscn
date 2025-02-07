@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlaj1cm8uck4w"]
+
+[ext_resource type="PackedScene" uid="uid://cvhmtmoe37828" path="res://gltf/coin_stack_large.gltf" id="1_jwy0c"]
+[ext_resource type="Script" path="res://objects/coin_stack_large.gd" id="2_2y1xq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s0l1h"]
+size = Vector3(1.31372, 1.34839, 1)
+
+[node name="coin_stack_large" instance=ExtResource("1_jwy0c")]
+script = ExtResource("2_2y1xq")
+
+[node name="Area3D" type="Area3D" parent="coin_stack_large" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="coin_stack_large/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038208, 0.560669, 0)
+shape = SubResource("BoxShape3D_s0l1h")
+
+[connection signal="body_entered" from="coin_stack_large/Area3D" to="." method="_on_area_3d_body_entered"]

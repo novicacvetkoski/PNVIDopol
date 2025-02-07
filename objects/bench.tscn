@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwfgpgrr5g146"]
+
+[ext_resource type="PackedScene" uid="uid://cfq6dkvykekhp" path="res://Assets/gltf/bench.gltf" id="1_2xyk4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbpht"]
+size = Vector3(2.10168, 1.53978, 1)
+
+[node name="bench" instance=ExtResource("1_2xyk4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bench" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bench/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0564575, 0.682915, 0)
+shape = SubResource("BoxShape3D_wbpht")

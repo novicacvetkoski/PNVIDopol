@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2chm2uyksg4g"]
+
+[ext_resource type="PackedScene" uid="uid://op6j703me444" path="res://Assets/gltf/floor_grass_sliced_base.gltf" id="1_prtlo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_baku4"]
+size = Vector3(2.01318, 0.50943, 1.96924)
+
+[node name="floor_grass_sliced_base" instance=ExtResource("1_prtlo")]
+
+[node name="floor_grass_sliced_base" parent="." index="0"]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0.113906)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor_grass_sliced_base" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor_grass_sliced_base/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00512695, -0.255539, 0.0217103)
+shape = SubResource("BoxShape3D_baku4")

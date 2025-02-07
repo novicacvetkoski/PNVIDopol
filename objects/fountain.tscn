@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqbc4iv2vu5of"]
+
+[ext_resource type="PackedScene" uid="uid://cxuq1r41wvqcg" path="res://Assets/gltf/fountain.gltf" id="1_4jul2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t5kfl"]
+size = Vector3(3.76306, 1.5471, 3.95483)
+
+[node name="fountain" instance=ExtResource("1_4jul2")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fountain" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fountain/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017395, 0.764215, 0.0045166)
+shape = SubResource("BoxShape3D_t5kfl")

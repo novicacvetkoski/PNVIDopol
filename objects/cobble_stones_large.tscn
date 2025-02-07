@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4vl6g0odep4k"]
+
+[ext_resource type="PackedScene" uid="uid://dnvab83r55j3g" path="res://Assets/gltf/cobble_stones_large.gltf" id="1_oe0c8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_axhw5"]
+size = Vector3(1.77832, 0.110512, 1.79443)
+
+[node name="cobble_stones_large" instance=ExtResource("1_oe0c8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cobble_stones_large" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cobble_stones_large/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0844727, -0.0780755, -0.057373)
+shape = SubResource("BoxShape3D_axhw5")
